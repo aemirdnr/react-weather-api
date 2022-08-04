@@ -1,7 +1,12 @@
-import "./App.css";
+import Container from "./components/Container/Container";
+import { WeatherProvider } from "./context/WeatherContext";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <WeatherProvider>
+      <Container></Container>
+    </WeatherProvider>
+  );
 }
 
 export default App;
