@@ -13,7 +13,7 @@ export const WeatherProvider = ({ children }) => {
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
       "&units=metric&appid=" +
-      process.env.API_KEY;
+      process.env.REACT_APP_API_KEY;
 
     axios(API)
       .then((res) => {
@@ -26,13 +26,9 @@ export const WeatherProvider = ({ children }) => {
         });
 
         setErr(false);
-
-        console.log(weather);
       })
       .catch((error) => {
         setErr(true);
-        console.log(error);
-        console.log(err);
       });
   }, [city]);
 
