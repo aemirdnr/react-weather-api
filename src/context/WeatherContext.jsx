@@ -8,12 +8,14 @@ export const WeatherProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
   const [err, setErr] = useState(false);
 
+  const API_KEY = "8dfb4a59db45fac738b61477b8d175cb";
+
   useEffect(() => {
     const API =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
       "&units=metric&appid=" +
-      process.env.REACT_APP_API_KEY;
+      API_KEY;
 
     axios(API)
       .then((res) => {
