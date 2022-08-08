@@ -1,0 +1,75 @@
+.dark
+    h1, h2
+        color: white
+
+.light
+    h1, h2
+        color: black
+
+.toggle
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 0
+    width: 0
+    &:checked
+        + .toggle-design .toggle-button
+            background-color: #485367
+            box-shadow: inset 0px 0px 0px 0.15em white
+            transform: translate(0.10em, 0.10em)
+        + .toggle-design
+            background-color: #374151
+        + .toggle-design .toggle-sun
+            opacity: 0
+            transform: translate(1em, 1em) rotate(-15deg)
+        + .toggle-design .toggle-moon
+            opacity: 1
+            transform: translate(2.3em, 0.2em) rotate(-15deg)
+
+.toggle-design
+    position: relative
+    height: 2em
+    width: 4em
+    border: 2px solid #e4e7ec
+    border-radius: 10em
+    background-color: white
+    box-shadow: 0px 0px 10px #e4e7ec
+    transition: background-color 250ms
+
+.toggle-button
+    position: absolute
+    transform: translate(2.10em, 0.10em)
+    height: 1.5em
+    width: 1.5em
+    border-radius: 50%
+    background-color: #ffeccf
+    box-shadow: inset 0px 0px 0px 0.15em #ffbb52
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71)
+
+.toggle-sun
+  position: absolute
+  height: 1em
+  width: 1em
+  opacity: 1
+  transform: translate(0.30em, 0.20em) rotate(15deg)
+  transform-origin: 50% 50%
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71)
+  .sun-icon
+    position: absolute
+    height: 1.25em
+    width: 1.25em
+    color: #ffbb52
+
+.toggle-moon
+  position: absolute
+  height: 1em
+  width: 1em
+  opacity: 0
+  transform: translate(2.30em, 0.20em) rotate(15deg)
+  transform-origin: 50% 50%
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71)
+  .moon-icon
+    position: absolute
+    height: 1.25em
+    width: 1.25em
+    color: white
